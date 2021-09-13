@@ -32,7 +32,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	//프로젝트에서 연결된 DB의 넘버링 전략을 따라간다. 
 	private int id;	//시퀀스,  in mysql   auto_increment
 	
-	@Column(nullable=false, length=30, unique = true)
+	@Column(nullable=false, length=100, unique = true)
 	private String username;		//아이디
 	
 	@Column(nullable=false, length=100)	// 123456 => 해쉬 (비밀번호 암호화)
@@ -48,6 +48,9 @@ public class User {
 	private RoleType role;
 	//만약에 회원가입시 role이 admin, user, manager 가 있는데 이 3개말고 오타라던지 다른것을 입력하게 되면,
 	//String 형이라면 입력한 그대로 DB에 저장되지만, Enum을 사용하면 3개중에 1개만 들어갈수 있도록 해줄 수 있다.(도메인, 범위가 정해졌다.)
+	
+	private String oauth; //kakao , google
+	
 	
 	@CreationTimestamp	//시간이 자동으로 입력
 	private Timestamp createDate;			//회원가입했을 시 시간

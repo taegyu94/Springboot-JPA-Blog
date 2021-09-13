@@ -33,3 +33,13 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
+ 
+
+yoo:
+  key: yoo1234
+       
+       
+      
+    
+ 
+ 
